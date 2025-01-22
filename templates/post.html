@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <div class="post">
+            <h3><strong>{{ post.title }}</strong></h3>
+            {{ post.html | safe }}
+        </div>
+        <footer>Published: {{ post.published }}</footer>
+    </div>
+{% endblock %} 

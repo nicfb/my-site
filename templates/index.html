@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Home</h2>
+    <ul>
+        {% for page in pages %}
+            <li><a href="{{ url_for('render_post', name=page) }}">{{ page }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
