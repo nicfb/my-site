@@ -1,0 +1,15 @@
+[Unit]
+Description=Ramblings
+After=network.target
+
+[Service]
+User=nic
+WorkingDirectory=/home/nic/my-site
+ExecStart=/bin/bash funnel.sh
+Restart=no
+RestartSec=3
+Environment=PATH=/home/nic/my-site/.venv/bin:/usr/bin:/bin
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

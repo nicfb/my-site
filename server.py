@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template
 from flask_flatpages import FlatPages
+from waitress import serve
 
 debug = True
 posts_root_dir = 'posts'
@@ -25,4 +26,4 @@ def render_post(name):
     return render_template('post.html', post=post)
 
 if __name__ == "__main__":
-    app.run(debug=debug)
+    serve(app, host='0.0.0.0', port=8081)
